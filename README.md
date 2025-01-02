@@ -17,15 +17,15 @@ DocIT is a powerful tool designed to simplify the process of creating profession
 ## 🛠️ Getting Started  
 
 ### Prerequisites  
-- Go 1.20 or later installed on your system  
+- Go 1.23 or later installed on your system  
 - A GitHub account with access to the repositories you want to document  
 
 ### Installation  
 
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/yourusername/DocIT.git  
-   cd DocIT  
+   git clone https://github.com/lucashthiele/doc-it.git  
+   cd doc-it  
    ```  
 
 2. Install dependencies:  
@@ -50,12 +50,12 @@ DocIT is a powerful tool designed to simplify the process of creating profession
 
 To build the application:  
 ```bash  
-go build -o docit  
+go build -o doc-it  
 ```  
 
 Run the built binary:  
 ```bash  
-./docit  
+./doc-it  
 ```  
 
 ## 🤝 Contributing  
@@ -69,7 +69,7 @@ Contributions are welcome! If you’d like to improve DocIT, please:
 
 ## 📜 License  
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.  
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/lucashthiele/doc-it/blob/main/LICENCE) file for details.  
 
 ---
 
