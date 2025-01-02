@@ -37,7 +37,7 @@ DocIT is a powerful tool designed to simplify the process of creating profession
 
 1. Run the application:  
    ```bash  
-   go run main.go  
+   make run
    ```  
 
 2. Follow the instructions in the terminal to authenticate your GitHub account.  
