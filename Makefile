@@ -1,2 +1,3 @@
 run:
-	@go mod tidy && air
+	@go mod tidy
+	@air
