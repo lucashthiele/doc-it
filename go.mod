@@ -2,7 +2,10 @@ module github.com/lucashthiele/doc-it
 
 go 1.23.4
 
-require github.com/labstack/echo/v4 v4.13.3
+require (
+	github.com/a-h/templ v0.3.819
+	github.com/labstack/echo/v4 v4.13.3
+)
 
 require (
 	github.com/labstack/gommon v0.4.2 // indirect
