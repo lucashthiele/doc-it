@@ -1,0 +1,13 @@
+package index
+
+import "github.com/lucashthiele/doc-it/view/layout"
+
+var defaultLayoutProps = layout.DefaultLayoutProperties{
+  PageTitle: "Inicio",
+} 
+
+templ Show(name string) {
+  @layout.DefaultLayout(defaultLayoutProps) {
+    <h1>Hello, {name}</h1>
+  }
+}

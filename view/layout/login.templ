@@ -1,0 +1,11 @@
+package layout
+
+var defaultLayoutProps = DefaultLayoutProperties{
+  PageTitle: "Login",
+} 
+
+templ LoginLayout() {
+  @DefaultLayout(defaultLayoutProps) {
+    { children... }
+  }
+}
