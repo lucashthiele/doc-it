@@ -7,7 +7,12 @@ import (
 
 func SetupRoutes(e *echo.Echo) {
 	indexHandler := page.IndexHandler{}
+	loginHandler := page.LoginHandler{}
+
+	// static assets
+	e.Static("/public", "view/assets")
 
 	// pages
 	e.GET("/", indexHandler.Show)
+	e.GET("/login", loginHandler.Show)
 }

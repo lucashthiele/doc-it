@@ -43,6 +43,10 @@ func Show() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<main class=\"flex items-center justify-center min-h-screen\"><div class=\"flex items-center justify-center w-full max-w-md p-8 space-y-4 bg-white rounded shadow-lg\"><button class=\"flex items-center justify-center flex-row px-4 py-2 gap-2 bg-black rounded text-white \"><img class=\"w-8\" src=\"/public/github-mark-white.svg\"> Login with GitHub</button></div></main>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
 			return nil
 		})
 		templ_7745c5c3_Err = layout.LoginLayout().Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
