@@ -1,0 +1,15 @@
+package login
+
+import "github.com/lucashthiele/doc-it/view/layout"
+
+var defaultLayoutProps = layout.DefaultLayoutProperties{
+  PageTitle: "DocIT | Login Successful",
+} 
+
+templ Callback(authCode string) {
+  @layout.DefaultLayout(defaultLayoutProps) {
+    <div class="flex align-center">
+      Authorized succesfully. Received the code {authCode}. Redirecting to DocIT...
+    </div>
+  }
+}
