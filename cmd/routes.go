@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/lucashthiele/doc-it/handler/api"
 	"github.com/lucashthiele/doc-it/handler/page"
 )
 
@@ -14,12 +13,9 @@ func SetupRoutes(e *echo.Echo) {
 	// pages
 	indexHandler := page.IndexHandler{}
 	loginHandler := page.LoginHandler{}
+	loginCallbackHandler := page.LoginCallbackHandler{}
 
 	e.GET("/", indexHandler.Show)
 	e.GET("/login", loginHandler.Show)
-
-	// api
-	githubHandler := api.GithubHandler{}
-
-	e.POST("/github", githubHandler.Post)
+	e.GET("/login/callback", loginCallbackHandler.Get)
 }
