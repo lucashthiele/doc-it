@@ -3,10 +3,8 @@ module github.com/lucashthiele/doc-it
 go 1.23.4
 
 require (
-	github.com/a-h/templ v0.3.819
 	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v4 v4.13.3
-	github.com/templ-go/x v0.0.0-20240924085055-a31c35cebd07
 )
 
 require (

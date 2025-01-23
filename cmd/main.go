@@ -11,7 +11,7 @@ func main() {
 
 	err := env.Load()
 	if err != nil {
-		panic("Error loading .env file. This should never happen.")
+		panic("Error loading .env file.")
 	}
 
 	e.Use(middleware.CORS())
