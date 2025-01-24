@@ -1,7 +1,7 @@
 package env
 
 import (
-	"log"
+	"fmt"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -10,16 +10,16 @@ import (
 type EnvKey string
 
 func Load() error {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
-	return err
+	return godotenv.Load()
 }
 
-func (ek EnvKey) GetValue() string {
-	return os.Getenv(string(ek))
+func (ek EnvKey) GetValue() (string, error) {
+	envKey := string(ek)
+	env := os.Getenv(envKey)
+	if env == "" {
+		return "", fmt.Errorf("%s env key not found", envKey)
+	}
+	return env, nil
 }
 
 const (
