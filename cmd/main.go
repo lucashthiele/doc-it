@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/go-playground/validator"
 	"github.com/labstack/echo/v4"
+	"github.com/lucashthiele/doc-it/env"
 	"github.com/lucashthiele/doc-it/logger"
 	"github.com/lucashthiele/doc-it/middlewares"
 )
@@ -16,15 +17,15 @@ func (cv *CustomValidator) Validate(i interface{}) error {
 }
 func main() {
 	logger := logger.Get()
+	env.Load()
 
 	e := echo.New()
 	e.Validator = &CustomValidator{validator: validator.New()}
 
 	e.Use(middlewares.CORS())
+	e.Use(middlewares.Logger())
 
 	SetupRoutes(e)
-
-	e.Use(middlewares.Logger())
 
 	logger.Error().AnErr("ERROR", e.Start(":42069"))
 }

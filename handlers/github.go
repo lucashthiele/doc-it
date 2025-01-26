@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
-	"github.com/lucashthiele/doc-it/logger"
+	"github.com/lucashthiele/doc-it/services"
 )
 
 type (
@@ -16,19 +16,21 @@ type (
 	}
 )
 
+// Handles the request, validates it, call services, build response
 func (gh *GitHub) Post(c echo.Context) error {
-	logger := logger.Get()
-
 	githubRequest := new(GitHubRequest)
 	if err := c.Bind(githubRequest); err != nil {
-		return err
+		return echo.NewHTTPError(http.StatusBadRequest, err) // todo - improve response
 	}
 
 	if err := c.Validate(githubRequest); err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, "Code not provided")
+		return echo.NewHTTPError(http.StatusBadRequest, err) // todo - improve response
 	}
 
-	logger.Info().Msg("Received code: " + githubRequest.Code)
+	user, err := services.SaveGithubUser(githubRequest.Code)
+	if err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err) // todo - improve response
+	}
 
-	return c.JSON(http.StatusOK, "User saved")
+	return c.JSON(http.StatusOK, user)
 }
