@@ -3,9 +3,9 @@ package main
 import (
 	"github.com/go-playground/validator"
 	"github.com/labstack/echo/v4"
-	"github.com/lucashthiele/doc-it/env"
-	"github.com/lucashthiele/doc-it/logger"
-	"github.com/lucashthiele/doc-it/middlewares"
+	"github.com/lucashthiele/doc-it/internal/middlewares"
+	"github.com/lucashthiele/doc-it/pkg/env"
+	"github.com/lucashthiele/doc-it/pkg/logger"
 )
 
 type CustomValidator struct {

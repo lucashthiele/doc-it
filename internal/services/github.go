@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/lucashthiele/doc-it/config"
-	"github.com/lucashthiele/doc-it/env"
-	"github.com/lucashthiele/doc-it/logger"
-	"github.com/lucashthiele/doc-it/models"
+	"github.com/lucashthiele/doc-it/internal/config"
+	"github.com/lucashthiele/doc-it/internal/models"
+	"github.com/lucashthiele/doc-it/pkg/env"
+	"github.com/lucashthiele/doc-it/pkg/logger"
 	"github.com/rs/zerolog"
 )
 

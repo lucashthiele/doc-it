@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
-	"github.com/lucashthiele/doc-it/services"
+	"github.com/lucashthiele/doc-it/internal/services"
 )
 
 type (
