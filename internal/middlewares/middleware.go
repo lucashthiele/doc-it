@@ -6,7 +6,7 @@ import (
 	"github.com/lucashthiele/doc-it/pkg/logger"
 )
 
-func Logger() echo.MiddlewareFunc {
+func LoggerMiddleware() echo.MiddlewareFunc {
 	logger := logger.Get()
 
 	return middleware.RequestLoggerWithConfig(middleware.RequestLoggerConfig{
@@ -26,6 +26,6 @@ func Logger() echo.MiddlewareFunc {
 	})
 }
 
-func CORS() echo.MiddlewareFunc {
+func CorsMiddleware() echo.MiddlewareFunc {
 	return middleware.CORS()
 }
