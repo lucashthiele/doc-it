@@ -15,17 +15,21 @@ type CustomValidator struct {
 func (cv *CustomValidator) Validate(i interface{}) error {
 	return cv.validator.Struct(i)
 }
-func main() {
-	logger := logger.Get()
-	env.Load()
 
-	e := echo.New()
+func configServer(e *echo.Echo) {
 	e.Validator = &CustomValidator{validator: validator.New()}
 
 	e.Use(middlewares.CORS())
 	e.Use(middlewares.Logger())
 
 	SetupRoutes(e)
+}
 
+func main() {
+	logger := logger.Get()
+	env.Load()
+
+	e := echo.New()
+	configServer(e)
 	logger.Error().AnErr("ERROR", e.Start(":42069"))
 }
