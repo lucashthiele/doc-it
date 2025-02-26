@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   mongo:
-    image: mongo:8.0
+    image: mongo:8.0.0
     volumes:
       - mongo_data:/data/db
 
