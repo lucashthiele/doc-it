@@ -18,7 +18,6 @@ func Get() *zerolog.Logger {
 			Level(zerolog.TraceLevel).
 			With().
 			Timestamp().
-			Caller().
 			Logger()
 	})
 
