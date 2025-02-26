@@ -14,11 +14,6 @@ func Logger() echo.MiddlewareFunc {
 		LogStatus: true,
 		LogValuesFunc: func(c echo.Context, v middleware.RequestLoggerValues) error {
 			if v.Status >= 200 && v.Status <= 299 {
-				logger.Info().
-					Str("URI", v.URI).
-					Int("status", v.Status).
-					Msg("success")
-
 				return nil
 			}
 
