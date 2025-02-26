@@ -17,8 +17,9 @@ DocIT is a powerful tool designed to simplify the process of creating profession
 ## 🛠️ Getting Started  
 
 ### Prerequisites  
-- Go 1.23 or later installed on your system  
-- A GitHub account with access to the repositories you want to document  
+- Go 1.24 or later
+- Node 22.14 or later
+- Docker
 
 ### Installation  
 
