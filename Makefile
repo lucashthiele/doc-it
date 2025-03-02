@@ -4,4 +4,4 @@ run:
 
 build:
 	@go mod tidy
-	@go build -o ./build/program ./cmd
+	@go build -o ./build/program ./cmd/api

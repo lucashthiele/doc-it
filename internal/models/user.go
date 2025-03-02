@@ -12,9 +12,10 @@ type (
 	}
 
 	User struct {
-		Id       string
-		Username string
-		Email    string
-		Oauth    Oauth
+		Id    string
+		Login string
+		Name  string
+		Email string
+		Oauth Oauth
 	}
 )
